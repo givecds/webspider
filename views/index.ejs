@@ -1,4 +1,9 @@
 <%- include head %>
     <p>Welcome to <%= title %></p>
+    <ul>
+		<% articleList.forEach(function(e){ %>
+			<li><a href="e.articleurl" target="_blank"><%= e.articletitle %></a></li>
+		<% }) %>
+    </ul>
   </body>
 </html>

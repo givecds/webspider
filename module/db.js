@@ -3,14 +3,8 @@ var Schema = mongoose.Schema;
 var spiderSchema = new Schema({
 	name : String,
 	title : String,
-	time : {
-		date: Date,
-		year: String,
-		month: String,
-		day: String,
-		minute: String
-	},
-	post : String
+	url : String,
+	time :String
 });
 
 

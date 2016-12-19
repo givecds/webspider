@@ -1,14 +1,25 @@
 var express = require('express');
 var router = express.Router();
-var spiders = require('../db/db').spiders;
+var spiders = require('../module/db').spiders;
 var crypto = require('crypto');
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/blogdb');
-var db = mongoose.connection;
+var list = require('../update/list')
+
+var newList=spiders.find({'name':'project'},function(err,docs){
+	console.log(err||docs);
+	return docs;
+})
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// router.get('/', function(req, res, next) {
+// 	console.log(newList);
+//   res.render('index', { 
+//   	title: 'webSpider', 
+//   	articleList: [],
+//   	articleurl: "1",
+//   	articletitle: "1"
+//   });
+// });
+
+
 
 module.exports = router;
